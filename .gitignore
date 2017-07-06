@@ -1,1 +1,16 @@
 /.idea/
+/libs/
+/entorno-docker.iml
+/.project
+.project
+.settings/
+/repos/tcp/
+/repos/spr/
+/repos/webapps/*.war
+/repos/webapps/ROOT/
+/repos/webapps/tablero/
+Would skip repository repos/spr
+Would skip repository repos/tcp
+/repos/sql/
+/files/pgalpine/sql/spr.sql
+/files/pgalpine/sql/tablero.sql

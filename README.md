@@ -1,50 +1,109 @@
-Requerimientos para utilizar SPR o Tablero
-======
+script todo en uno
+================
 
+**En linux:**
+
+Se asume que ya tenemos git ;-)
+
+**Nos desplazamos dentro del repositorio que acabamos de clonar y ejecutamos:**
+
+<pre>
+./build_dev.sh
+</pre>
+
+**En linux ejecutamos:**
+<code>
+sudo echo "127.0.0.1 login.stp.gov.py login spr.stp.gov.py spr" >> /etc/hosts
+</code>
+
+**En windows ponemos en archivo hosts:**
+<code> 127.0.0.1 login.stp.gov.py login spr.stp.gov.py spr</code>
+
+**Para construir el entorno:**
+
+<code>docker-compose -f stp-dev.yml build</code>
+
+
+**Para iniciar el entorno:**
+
+<code>docker-compose -f stp-dev.yml up</code>
+
+
+
+**Para iniciar sesion ssh dentro del contenedor correr:**
+
+<code>docker exec -it entornodocker_XXXX_1 /bin/bash</code>
+
+siendo XXXX los nombres designados en el archivo stp-dev.yml
+
+
+**Requerimientos:**
+
+* Git
+* Docker 1.13.0+
+* Docker Compose 1.13.0+
 * OpenJDK 8
-* Maven 3+, para construir el proyecto
-* Postgresql 9.3+, como repositorio de datos
-* Tomcat 7+, para correr los aplicativos deployados
-* Memcached, para el manejo de tickets en memoria
-* Nginx 1.10+, para servir los archivos estaticos y ser nexo con el backend
+* Maven 3+
 
-Si ya tiene instalada alguna de estas herramientas, utilice los archivos contenidos en **MASTER** (este branch).  
-Si no tiene instalada ninguna de las herramientas necesarias, y tiene S.O. LINUX  utilice el branch **docker** que contiene
-un script que auto instala las dependencias necesarias.
+Testeado con:
+ 1. Docker 17.03.1-ce y Docker Compose 1.14.0-rc2 sobre Ubuntu Xenial 16.04.2
+ 2. Docker 17.06.0-ce y Docker Compose 1.14.0 sobre Centos 7.
+
+* Ubicar los archivos spr.sql y tablero.sql en el file/path/pgalpine/sql
+* Clonar los repositorios spr y tcp dentro de la carpeta repos (facilita el auto-deploy)
+* En los archivos pom.xml de cada proyecto, reemplazar la linea:
+
+<pre>&lt;outputDirectory&gt;/usr/share/tomcat/webapps&lt;/outputDirectory&gt; </pre>
+
+con:
+
+<pre>&lt;outputDirectory&gt;../webapps&lt;/outputDirectory&gt;</pre>
+
+Configuramos vhost locales en nuestro equipo, apuntando a localhost lo siguiente:
 
 
-*Listado de archivos en Master*
+Instalación de Docker
+=====================
+
+
+**Referencia a docker y docker-compose:**
+
+* http://overapi.com/docker
+* https://docs.docker.com
+* https://docs.docker.com/compose
 
 
 
 
-www.zip -> archivos estaticos, en /var/www/html según los archivos .conf de nginx:
+**Centos 7**
 
-**Contenido del Directorio conf:**
-  
-conf  
-├── nginx  -> Configuracion de NGINX  
-│   ├── conf.d  
-│   │   ├── login.stp.gov.py.conf  -> vhost login.stp.gov.py  
-│   │   └── spr.stp.gov.py.conf  -> vhost spr.stp.gov.py  
-│   ├── gencert.sh  -> script para la generacion de certificados autofirmados  
-│   ├── mime.types  -> mimetypes  
-│   ├── nginx.conf  -> archivo principal de configuracion para nginx  
-│   └── ssl  -> certificado ssl autofirmados ya pre-generados  
-│       ├── *.stp.gov.py.crt  
-│       ├── *.stp.gov.py.csr  
-│       ├── *.stp.gov.py.key  
-│       └── *.stp.gov.py.key.org  
-└── tomcat  
-    ├── conf  -> archivos que deben ir en la carpeta conf del tomcat  
-    │   ├── context.xml  
-    │   └── server.xml  
-    ├── genjks.sh  -> script para generar llave jks con los certificados SSL del NGINX  
-    ├── lib  -> jar's necesarios que deben ir en la carpeta LIB del tomcat  
-    │   ├── couchbase-client-1.1.9.jar  
-    │   ├── memcached-session-manager-1.6.5.jar  
-    │   ├── memcached-session-manager-tc7-1.6.5.jar  
-    │   └── spymemcached-2.10.3.jar  
-    └── opt  -> archivos para tomcat SSL  
-        ├── stpgovpy.crt  
-        └── stp.jks  -> debe ir en /opt/stp.jks o modificar su ubicacion en server.xml  
+
+**Como usuario con permisos para sudo, ejecutamos:**
+
+
+<pre>curl -fsSL https://get.docker.com/ | sh
+
+sudo systemctl start docker
+</pre>
+
+Damos permiso a nuestro usuario para utilizar docker:
+
+<pre>sudo usermod -aG docker $(whoami) </pre>
+
+Reiniciamos la sesión del usuario y comprobamos la versión de docker con:
+
+<pre>docker version </pre>
+
+
+**Instalamos docker-compose:**
+
+
+<pre>
+sudo curl -L https://github.com/docker/compose/releases/download/1.14.0/docker-compose-`uname -s`-`uname -m` > /usr/local/bin/docker-compose 
+sudo chmod +x /usr/local/bin/docker-compose
+</pre>
+
+
+Verificamos la versión de docker-compose instalada (1.14.0):
+
+<code>docker-compose version<code>

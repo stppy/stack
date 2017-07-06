@@ -1,0 +1,70 @@
+      <div class="col-md-12">
+          <div class="box" height="1000px">
+            <div class="box-header with-border" height="1000px">
+              <h3 class="box-title" id="tituloTipoPrograma">
+                <button class="btn btn-box-tool" data-widget="collapse"><i class="fa fa-plus"></i></button>
+                Entidad
+              </h3>
+              <div class="box-tools pull-right" height="1000px"><button class="btn btn-box-tool" data-widget="collapse"><i class="fa fa-minus"></i></button>
+              </div>
+            </div>
+            <div class="box-body" >
+              <ul  class="col-md-12">
+				<form class="form-horizontal" role="form" id="formulario" action="http://spr.stp.gov.py/ajaxUpdate" method="post">
+					<input type="hidden" name="anho" id="anho" anho="2015" value="2015">
+					<input type="hidden" name="nivel"  id="nivel" anho="2015" value="12">
+					<input type="hidden" name="entidad"  id="entidad" anho="2015" value="1">
+					<input type="hidden" name="accion"  id="accion" name="accion" anho="2015" value="actEntidad">
+					<div class="form-group">
+                      <label>Nivel</label>
+                      <input type="text" class="form-control" placeholder=""  disabled="" value="12">
+                    </div>
+                    <div class="form-group">
+                      <label>Entidad</label>
+                      <input type="text" class="form-control" placeholder="" disabled=""  value="1">
+                    </div>
+					<div class="form-group">
+                      <label>Descripción</label>
+                      <textarea class="form-control" rows="3" placeholder="" name="descripcion" id="descripcion" ></textarea>
+                    </div>
+                    <div class="form-group">
+                      <label>Abreviación</label>
+                      <input type="text" class="form-control" placeholder="" name="abrev" id="abrev" >
+                    </div>
+                    <!-- <div class="form-group">
+                      <label>Sigla</label>
+                      <input type="text" class="form-control" placeholder="" name="sigla" id="sigla" >
+                    </div> --> 
+                    <div class="form-group">
+                      <label>Base Legal</label>
+                      <textarea class="form-control" rows="3" placeholder="" name="baseLegal" id="baseLegal" ></textarea>
+                    </div>
+                    <div class="form-group">
+                      <label>Misión</label>
+                      <textarea class="form-control" rows="3" placeholder="" name="mision" id="mision" ></textarea>
+                    </div>
+                    <div class="form-group">
+                      <label>Visión</label>
+                      <textarea class="form-control" rows="3" placeholder="" name="vision" id="vision" ></textarea>
+                    </div>
+                     <div class="form-group">
+                      <label>Política</label>
+                      <textarea class="form-control" rows="3" placeholder="" name="politica" id="politica" ></textarea>
+                    </div>
+                    <div class="form-group">
+                      <label>Objetivo</label>
+                      <textarea class="form-control" rows="3" placeholder="" name="objetivo" id="objetivo" ></textarea>
+                    </div>
+                    <div class="form-group">
+                      <label>Diagnóstico</label>
+                      <textarea class="form-control" rows="3" placeholder="" name="diagnostico" id="diagnostico" ></textarea>
+                    </div>
+                    <div class="box-footer">
+                    	<button type="submit" class="btn btn-primary" id="guardar-entidad">Guardar</button>
+                    </div>
+
+				</form>
+			</ul>
+		</div>
+	</div>
+</div>

@@ -1,0 +1,65 @@
+      <div class="col-md-12">
+          <div class="box" height="1000px">
+            <div class="box-header with-border" height="1000px">
+              <h3 class="box-title" id="tituloTipoPrograma">
+                <button class="btn btn-box-tool" data-widget="collapse"><i class="fa fa-plus"></i></button>
+                Indicador
+              </h3>
+              <div class="box-tools pull-right" height="1000px"><button class="btn btn-box-tool" data-widget="collapse"><i class="fa fa-minus"></i></button>
+              </div>
+            </div>
+            <div class="box-body" >
+              <ul  class="col-md-12">
+				<form class="form-horizontal" role="form" id="formulario">
+					<input type="hidden"  id="indicador_id" value="">
+					<input type="hidden"  id="objetivo_id" value="">
+					<div class="form-group">
+                      <label>Nombre</label>
+                      <input type= "text" class="form-control" placeholder="" nombre="nombre">
+                    </div>
+                    <div class="form-group">
+                      <label>Descripcion</label>
+                      <input type= "text" class="form-control" placeholder="" nombre="descripcion">
+                    </div>
+					<div class="form-group">
+                      <label>Tipo Indicador</label>
+                      <select class= "form-control" nombre="tipo_indicador_id"></select>
+                    </div>
+                    <div class="form-group">
+                      <label>Metodo Calculo</label>
+                      <select class= "form-control" nombre="metodo_calculo_id"></select>
+                    </div>
+                     <div class="form-group">
+                      <label>Unidad de Medida</label>
+                      <select class= "form-control" nombre="unidad_medida_id"></select>
+                    </div>
+                    <div class="form-group">
+                      <label>Frecuencia Meses</label>
+                      <input type="int" class="form-control" rows="3" placeholder="" nombre="frecuencia_meses">
+                    </div>
+                    <div class="form-group">
+                      <label>Desagregacion Tipo Zona Geografica</label>
+                      <select class= "form-control" nombre="desagregacion_tipo_zona_geografica_id"></select>
+                    </div>
+                    <div class="form-group">
+                      <label>Tipo Demografica</label>
+                      <select class= "form-control" nombre="tipo_demografica_id"></select>
+                    </div>
+                     <div class="form-group">
+                      <label>Fuente Verificacion</label>
+                      <select class= "form-control" nombre="fuente_verificacion_id"></select>
+                    </div>
+                    <div class="form-group">
+                      <label>Observaciones</label>
+                      <input type= "text" class="form-control" placeholder="" nombre="observaciones">
+                    </div>
+                    
+                    <div class="box-footer">
+                    	<button type="submit" class="btn btn-primary" id="guardar-indicador">Guardar</button>
+                    </div>
+
+				</form>
+			</ul>
+		</div>
+	</div>
+</div>
