@@ -136,7 +136,7 @@ if [ "$1" = 'postgres' ]; then
         ###### ACA SE RESTAURAN LAS BASE DE DATOS ######
 
                 gunzip -c /docker-entrypoint-initdb.d/spr.sql.gz | psql -U postgres spr
-                gunzip -c /docker-entrypoint-initdb.d/tablero.sql.gz | psql -U postgresl tablero2015v3
+                gunzip -c /docker-entrypoint-initdb.d/tablero.sql.gz | psql -U postgres tablero2015v3
                 #psql -U postgres spr < /docker-entrypoint-initdb.d/spr.sql
                 #psql -U postgres tablero2015v3 < /docker-entrypoint-initdb.d/tablero.sql
                 #for f in /docker-entrypoint-initdb.d/*; do
