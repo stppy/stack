@@ -21,7 +21,7 @@
     <WatchedResource>WEB-INF/web.xml</WatchedResource>
 
     <Manager className="de.javakaffee.web.msm.MemcachedBackupSessionManager"
-             memcachedNodes="n1:app03.stp.gov.py:11211"
+             memcachedNodes="n1:cache:11211"
              requestUriIgnorePattern=".*\.(ico|png|gif|jpg|css|js)$"
     />
 </Context>
