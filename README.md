@@ -8,7 +8,15 @@ Requerimientos para utilizar SPR o Tablero
 * Memcached, para el manejo de tickets en memoria
 * Nginx 1.10+, para servir los archivos estaticos y ser nexo con el backend
 
-Si ya posee instalada alguna de estas herramientas, utilice los siguientes archivos:
+Si ya tiene instalada alguna de estas herramientas, utilice los archivos contenidos en **MASTER** (este branch).  
+Si no tiene instalada ninguna de las herramientas necesarias, y tiene S.O. LINUX  utilice el branch **docker** que contiene
+un script que auto instala las dependencias necesarias.
+
+
+*Listado de archivos en Master*
+
+
+
 
 www.zip -> archivos estaticos, en /var/www/html según los archivos .conf de nginx:
 
