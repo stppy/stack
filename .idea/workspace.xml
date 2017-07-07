@@ -1,12 +1,8 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="683c0a14-ce2b-4b8f-912f-b8b0d189ca1d" name="Default" comment="Agregada descripcion">
-      <change type="DELETED" beforePath="$PROJECT_DIR$/.idea/misc.xml" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/.idea/modules.xml" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/.idea/stack.iml" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/.idea/vcs.xml" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="" />
+    <list default="true" id="683c0a14-ce2b-4b8f-912f-b8b0d189ca1d" name="Default" comment="">
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/README.md" afterPath="$PROJECT_DIR$/README.md" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
@@ -32,9 +28,9 @@
       <file leaf-file-name="README.md" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/README.md">
           <provider selected="true" editor-type-id="split-provider[text-editor;markdown-preview-editor]">
-            <state split_layout="SECOND">
-              <first_editor relative-caret-position="629">
-                <caret line="74" column="51" lean-forward="false" selection-start-line="74" selection-start-column="51" selection-end-line="74" selection-end-column="51" />
+            <state split_layout="FIRST">
+              <first_editor relative-caret-position="293">
+                <caret line="41" column="24" lean-forward="false" selection-start-line="41" selection-start-column="24" selection-end-line="41" selection-end-column="24" />
                 <folding />
               </first_editor>
               <second_editor />
@@ -55,8 +51,8 @@
   <component name="IdeDocumentHistory">
     <option name="CHANGED_PATHS">
       <list>
-        <option value="$PROJECT_DIR$/README.md" />
         <option value="$PROJECT_DIR$/.gitignore" />
+        <option value="$PROJECT_DIR$/README.md" />
       </list>
     </option>
   </component>
@@ -575,7 +571,7 @@
       <option name="presentableId" value="Default" />
       <updated>1499351806038</updated>
       <workItem from="1499351808075" duration="2073000" />
-      <workItem from="1499426572703" duration="992000" />
+      <workItem from="1499426572703" duration="1091000" />
     </task>
     <task id="LOCAL-00001" summary="Agregada descripcion">
       <created>1499353006864</created>
@@ -591,11 +587,18 @@
       <option name="project" value="LOCAL" />
       <updated>1499353280430</updated>
     </task>
-    <option name="localTasksCounter" value="3" />
+    <task id="LOCAL-00003" summary="Improve Readme">
+      <created>1499427577198</created>
+      <option name="number" value="00003" />
+      <option name="presentableId" value="LOCAL-00003" />
+      <option name="project" value="LOCAL" />
+      <updated>1499427577198</updated>
+    </task>
+    <option name="localTasksCounter" value="4" />
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="3065000" />
+    <option name="totallyTimeSpent" value="3164000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="1277" y="99" width="1606" height="877" extended-state="6" />
@@ -640,7 +643,8 @@
   </component>
   <component name="VcsManagerConfiguration">
     <MESSAGE value="Agregada descripcion" />
-    <option name="LAST_COMMIT_MESSAGE" value="Agregada descripcion" />
+    <MESSAGE value="Improve Readme" />
+    <option name="LAST_COMMIT_MESSAGE" value="Improve Readme" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager />
@@ -711,9 +715,9 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/README.md">
       <provider selected="true" editor-type-id="split-provider[text-editor;markdown-preview-editor]">
-        <state split_layout="SECOND">
-          <first_editor relative-caret-position="629">
-            <caret line="74" column="51" lean-forward="false" selection-start-line="74" selection-start-column="51" selection-end-line="74" selection-end-column="51" />
+        <state split_layout="FIRST">
+          <first_editor relative-caret-position="293">
+            <caret line="41" column="24" lean-forward="false" selection-start-line="41" selection-start-column="24" selection-end-line="41" selection-end-column="24" />
             <folding />
           </first_editor>
           <second_editor />

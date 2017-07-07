@@ -37,9 +37,9 @@ sh run.sh
 
 2. **Para acceder al sistema utilizar las siguientes credenciales**:
 
-**Dirección**: http://spr.stp.gov.py
-**Usuario**: pruebadgtic@stp.gov.py
-**Contraseña**: stp123
+**Dirección**: http://spr.stp.gov.py  
+**Usuario**: pruebadgtic@stp.gov.py  
+**Contraseña**: stp123  
 
 3. **Modificamos el codigo**:
 
