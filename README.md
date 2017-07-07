@@ -13,10 +13,10 @@ Si no tiene instalada ninguna de las herramientas necesarias, y tiene S.O. LINUX
 un script que auto instala las dependencias necesarias.
 
 
+**Para instrucciones referentes de como instalar o configurar el CAS**, favor diríjase a https://github.com/stppy/cas
+
+
 *Listado de archivos en Master*
-
-
-
 
 www.zip -> archivos estaticos, en /var/www/html según los archivos .conf de nginx:
 
