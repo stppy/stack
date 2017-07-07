@@ -1,109 +1,75 @@
-script todo en uno
+Entorno auto instalable basado en docker
 ================
 
 **En linux:**
 
 Se asume que ya tenemos git ;-)
 
-**Nos desplazamos dentro del repositorio que acabamos de clonar y ejecutamos:**
 
-<pre>
-./build_dev.sh
-</pre>
+**Agregamos los vhost correspondientes:**  
 
-**En linux ejecutamos:**
 <code>
 sudo echo "127.0.0.1 login.stp.gov.py login spr.stp.gov.py spr" >> /etc/hosts
 </code>
 
-**En windows ponemos en archivo hosts:**
-<code> 127.0.0.1 login.stp.gov.py login spr.stp.gov.py spr</code>
 
-**Para construir el entorno:**
-
-<code>docker-compose -f stp-dev.yml build</code>
-
-
-**Para iniciar el entorno:**
-
-<code>docker-compose -f stp-dev.yml up</code>
-
-
-
-**Para iniciar sesion ssh dentro del contenedor correr:**
-
-<code>docker exec -it entornodocker_XXXX_1 /bin/bash</code>
-
-siendo XXXX los nombres designados en el archivo stp-dev.yml
-
-
-**Requerimientos:**
-
-* Git
-* Docker 1.13.0+
-* Docker Compose 1.13.0+
-* OpenJDK 8
-* Maven 3+
-
-Testeado con:
- 1. Docker 17.03.1-ce y Docker Compose 1.14.0-rc2 sobre Ubuntu Xenial 16.04.2
- 2. Docker 17.06.0-ce y Docker Compose 1.14.0 sobre Centos 7.
-
-* Ubicar los archivos spr.sql y tablero.sql en el file/path/pgalpine/sql
-* Clonar los repositorios spr y tcp dentro de la carpeta repos (facilita el auto-deploy)
-* En los archivos pom.xml de cada proyecto, reemplazar la linea:
-
-<pre>&lt;outputDirectory&gt;/usr/share/tomcat/webapps&lt;/outputDirectory&gt; </pre>
-
-con:
-
-<pre>&lt;outputDirectory&gt;../webapps&lt;/outputDirectory&gt;</pre>
-
-Configuramos vhost locales en nuestro equipo, apuntando a localhost lo siguiente:
-
-
-Instalación de Docker
-=====================
-
-
-**Referencia a docker y docker-compose:**
-
-* http://overapi.com/docker
-* https://docs.docker.com
-* https://docs.docker.com/compose
-
-
-
-
-**Centos 7**
-
-
-**Como usuario con permisos para sudo, ejecutamos:**
-
-
-<pre>curl -fsSL https://get.docker.com/ | sh
-
-sudo systemctl start docker
-</pre>
-
-Damos permiso a nuestro usuario para utilizar docker:
-
-<pre>sudo usermod -aG docker $(whoami) </pre>
-
-Reiniciamos la sesión del usuario y comprobamos la versión de docker con:
-
-<pre>docker version </pre>
-
-
-**Instalamos docker-compose:**
-
+**Nos desplazamos dentro del repositorio que acabamos de clonar y ejecutamos:**
 
 <pre>
-sudo curl -L https://github.com/docker/compose/releases/download/1.14.0/docker-compose-`uname -s`-`uname -m` > /usr/local/bin/docker-compose 
-sudo chmod +x /usr/local/bin/docker-compose
+cd /home/user/stack
+sh build_dev.sh
 </pre>
 
+Con esto el script comenzará a instalar las dependencias necesarias y nos pedirá reiniciar el equipo, volvemos a correr el script.
 
-Verificamos la versión de docker-compose instalada (1.14.0):
+La instalación completa lleva aproximadamente 30minutos y se descargan aproximadamente 1GB de datos.
 
-<code>docker-compose version<code>
+Una vez completada la instalación, **iniciamos el entorno**.
+
+**Ciclo de Desarrollo**:
+========================
+
+1. **Iniciamos el entorno**:
+<pre>
+cd /home/user/stack
+sh run.sh
+</pre>
+
+2. **Para acceder al sistema utilizar las siguientes credenciales**:
+
+**Dirección**: http://spr.stp.gov.py
+**Usuario**: pruebadgtic@stp.gov.py
+**Contraseña**: stp123
+
+3. **Modificamos el codigo**:
+
+* Los repositorios son clonados automaticamente en el directorio "repos".
+
+4. **Recompilamos el codigo**:
+
+Nos desplazamos dentro del repositorio correspondiente:
+
+* /home/user/stack/repos/spr (Sistema de Planificacion por Resultados)
+* /home/user/stack/repos/tcp (Tablero de Control Presidencial)
+
+
+y ejecutamos:  
+
+<code>mvn clean install </code>
+
+a fines de recompilar el codigo
+
+
+**Para ver la lista de contenedores ejecutar:**
+
+<code>docker ps</code>
+
+**Para ver los logs del tomcat ejecutar:**
+
+<code>docker logs -f stack_backend_1 </code>
+
+**Para iniciar sesion ssh dentro de un contenedor correr:**
+
+<code>docker exec -it stack_XXXX_1 /bin/bash</code>  
+o  
+<code>docker exec -it stack_XXXX_1 /bin/sh</code>  
